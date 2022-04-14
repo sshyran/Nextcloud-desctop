@@ -66,6 +66,29 @@ configured on your client.
 See https://github.com/owncloud/client/issues/5226 for more discussion of this
 issue.
 
+"Connection closed" message when syncing files
+---------------------
+
+This message can be caused by using chunks that are too big or time-outs that
+are set too liberally. You can configure the chunking behavior of the client in
+the config file. For example, change these settings:
+
++----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
+| ``chunkSize``                    | ``10000000`` (10 MB)     | Specifies the chunk size of uploaded files in bytes.                                                   |
+|                                  |                          | The client will dynamically adjust this size within the maximum and minimum bounds (see below).        |
++----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
+| ``minChunkSize``                 | ``1000000`` (1 MB)       | Specifies the minimum chunk size of uploaded files in bytes.                                           |
++----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
+| ``maxChunkSize``                 | ``1000000000`` (1000 MB) | Specifies the maximum chunk size of uploaded files in bytes.                                           |
++----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
+| ``targetChunkUploadDuration``    | ``6000`` (1 minute)      | Target duration in milliseconds for chunk uploads.                                                     |
+|                                  |                          | The client adjusts the chunk size until each chunk upload takes approximately this long.               |
+|                                  |                          | Set to 0 to disable dynamic chunk sizing.                                                              |
++----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
+
+Setting ``TargedChunkUploadDuration`` to 1000, for example, will decrease the
+individual chunk to about 10 seconds. This causes additional overhead but
+might be required in some situations.
 
 Isolating other issues
 ----------------------
