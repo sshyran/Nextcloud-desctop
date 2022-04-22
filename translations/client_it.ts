@@ -45,13 +45,13 @@
 <context>
     <name>ActivityItemContent</name>
     <message>
-        <location filename="../src/gui/tray/ActivityItemContent.qml" line="175"/>
-        <location filename="../src/gui/tray/ActivityItemContent.qml" line="186"/>
+        <location filename="../src/gui/tray/ActivityItemContent.qml" line="179"/>
+        <location filename="../src/gui/tray/ActivityItemContent.qml" line="190"/>
         <source>Dismiss</source>
         <translation>Annulla</translation>
     </message>
     <message>
-        <location filename="../src/gui/tray/ActivityItemContent.qml" line="217"/>
+        <location filename="../src/gui/tray/ActivityItemContent.qml" line="221"/>
         <source>Open share dialog</source>
         <translation>Apri finestra di condivisione</translation>
     </message>
@@ -4091,7 +4091,7 @@ This is a new, experimental mode. If you decide to use it, please report any iss
     <message>
         <location filename="../src/gui/tray/notificationhandler.cpp" line="114"/>
         <source>Reply</source>
-        <translation type="unfinished"/>
+        <translation>Rispondi</translation>
     </message>
     <message>
         <location filename="../src/gui/tray/notificationhandler.cpp" line="137"/>
