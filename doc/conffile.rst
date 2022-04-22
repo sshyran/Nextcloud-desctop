@@ -45,7 +45,7 @@ Some interesting values that can be set on the configuration file are:
 +----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
 | ``maxChunkSize``                 | ``1000000000`` (1000 MB) | Specifies the maximum chunk size of uploaded files in bytes.                                           |
 +----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
-| ``targetChunkUploadDuration``    | ``60000`` (1 minute)      | Target duration in milliseconds for chunk uploads.                                                     |
+| ``targetChunkUploadDuration``    | ``60000`` (1 minute)     | Target duration in milliseconds for chunk uploads.                                                     |
 |                                  |                          | The client adjusts the chunk size until each chunk upload takes approximately this long.               |
 |                                  |                          | Set to 0 to disable dynamic chunk sizing.                                                              |
 +----------------------------------+--------------------------+--------------------------------------------------------------------------------------------------------+
