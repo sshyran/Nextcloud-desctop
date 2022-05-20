@@ -59,6 +59,9 @@ void warnSystray()
 int main(int argc, char **argv)
 {
 #ifdef Q_OS_WIN
+    qputenv("QT_OPENGL", "angle");
+    qputenv("QT_ANGLE_PLATFORM", "warp");
+
     SetDllDirectory(L"");
 #endif
     Q_INIT_RESOURCE(resources);
