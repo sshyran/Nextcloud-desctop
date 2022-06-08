@@ -1,9 +1,13 @@
 import QtQuick.Window 2.15
+import Style 1.0
 
 import com.nextcloud.desktopclient 1.0 as NC
 
 Window {
     id: dialog
+
+    title: qsTr("Set user status")
+    color: Style.backgroundColor
     
     property NC.UserStatusSelectorModel model: NC.UserStatusSelectorModel {
         onFinished: dialog.close()
