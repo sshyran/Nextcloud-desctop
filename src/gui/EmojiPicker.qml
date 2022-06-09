@@ -16,6 +16,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
+import Style 1.0
 import com.nextcloud.desktopclient 1.0 as NC
 
 ColumnLayout {
@@ -77,6 +78,7 @@ ColumnLayout {
     }
 
     GridView {
+        id: emojiView
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.preferredHeight: metrics.height * 8
@@ -103,6 +105,16 @@ ColumnLayout {
                 chosen(modelData.unicode);
                 emojiModel.emojiUsed(modelData);
             }
+        }
+
+        Label {
+            id: placeholderMessage
+            anchors.centerIn: parent
+            text: qsTr("No recent emojis")
+            color: Style.ncSecondaryTextColor
+            wrapMode: Text.Wrap
+            font.bold: true
+            visible: emojiView.count === 0
         }
 
         ScrollBar.vertical: ScrollBar {}
