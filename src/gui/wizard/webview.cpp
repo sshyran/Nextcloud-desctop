@@ -136,6 +136,7 @@ WebViewPageUrlRequestInterceptor::WebViewPageUrlRequestInterceptor(QObject *pare
 }
 
 void WebViewPageUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info) {
+    qCInfo(lcWizardWebiew()) << info.requestMethod();
     if (info.initiator().isEmpty()) {
         info.setHttpHeader("OCS-APIREQUEST", "true");
         qCDebug(lcWizardWebiew()) << info.requestMethod() << "add extra header" << "OCS-APIREQUEST";
