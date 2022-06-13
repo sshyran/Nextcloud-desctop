@@ -58,6 +58,7 @@ void warnSystray()
 
 int main(int argc, char **argv)
 {
+    qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--disable-gpu --enable-logging --log-level=0");
     QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL, true);
 
 #ifdef Q_OS_WIN
