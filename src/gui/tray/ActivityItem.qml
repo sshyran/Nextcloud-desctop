@@ -74,7 +74,7 @@ MouseArea {
 
             activityData: model
 
-            onShareButtonClicked: Systray.openShareDialog(model.displayPath, model.absolutePath)
+            onShareButtonClicked: Systray.openShareDialog(model.displayPath, model.path)
             onDismissButtonClicked: activityModel.slotTriggerDismiss(model.index)
         }
 
