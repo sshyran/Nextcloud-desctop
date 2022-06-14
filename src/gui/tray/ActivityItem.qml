@@ -17,8 +17,6 @@ MouseArea {
     property bool isTalkReplyOptionVisible: model.messageSent !== ""
     readonly property bool isCallActivity: model.objectType === "call"
 
-    signal fileActivityButtonClicked(string absolutePath)
-
     enabled: (model.path !== "" || model.link !== "" || model.isCurrentUserFileActivity === true)
     hoverEnabled: true
 
