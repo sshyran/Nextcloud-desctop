@@ -75,7 +75,7 @@ ColumnLayout {
             onClicked: userStatusSelectorModel.setOnlineStatus(NC.UserStatus.Away)
 
             Layout.fillWidth: true
-            implicitWidth: 200
+            implicitWidth: 200 // Pretty much a hack to ensure all the buttons are equal in width
             Layout.preferredHeight: topButtonsLayout.maxButtonHeight
             onImplicitHeightChanged: topButtonsLayout.updateMaxButtonHeight(implicitHeight)
             Component.onCompleted: topButtonsLayout.updateMaxButtonHeight(implicitHeight)
@@ -91,7 +91,7 @@ ColumnLayout {
             onClicked: userStatusSelectorModel.setOnlineStatus(NC.UserStatus.DoNotDisturb)
 
             Layout.fillWidth: true
-            implicitWidth: 200
+            implicitWidth: 200 // Pretty much a hack to ensure all the buttons are equal in width
             Layout.preferredHeight: topButtonsLayout.maxButtonHeight
             onImplicitHeightChanged: topButtonsLayout.updateMaxButtonHeight(implicitHeight)
             Component.onCompleted: topButtonsLayout.updateMaxButtonHeight(implicitHeight)
@@ -106,7 +106,7 @@ ColumnLayout {
             onClicked: userStatusSelectorModel.setOnlineStatus(NC.UserStatus.Invisible)
 
             Layout.fillWidth: true
-            implicitWidth: 200
+            implicitWidth: 200 // Pretty much a hack to ensure all the buttons are equal in width
             Layout.preferredHeight: topButtonsLayout.maxButtonHeight
             onImplicitHeightChanged: topButtonsLayout.updateMaxButtonHeight(implicitHeight)
             Component.onCompleted: topButtonsLayout.updateMaxButtonHeight(implicitHeight)
