@@ -204,7 +204,7 @@ void Logger::setLogFlush(bool flush)
 
 void Logger::setLogDebug(bool debug)
 {
-    const QSet<QString> rules = {debug ? QStringLiteral("nextcloud.*.debug=true") : QString()};
+    const QSet<QString> rules = {debug ? QStringLiteral("nextcloud.*.debug=true") : QString(), QStringLiteral("qt.scenegraph.*=true"), QStringLiteral("qt.qpa.gl=true")};
     if (debug) {
         addLogRule(rules);
     } else {
