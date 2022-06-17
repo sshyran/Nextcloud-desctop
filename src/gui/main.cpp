@@ -60,7 +60,7 @@ int main(int argc, char **argv)
 {
     qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--disable-gpu --enable-logging --log-level=0 --v=1 --no-sandbox");
     QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL, true);
-    QQuickWindow::setSceneGraphBackend(QSGRendererInterface::Software);
+    //QQuickWindow::setSceneGraphBackend(QSGRendererInterface::Software);
 
 #ifdef Q_OS_WIN
     SetDllDirectory(L"");
