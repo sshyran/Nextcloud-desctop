@@ -254,8 +254,10 @@ ColumnLayout {
             Layout.fillWidth: true
             Layout.leftMargin: Style.standardSpacing
             Layout.rightMargin: Style.standardSpacing
+            internalSpacing: Style.standardSpacing + fieldButton.padding + userStatusMessageTextField.padding
 
-            text: userStatusSelectorModel.predefinedStatus(index).icon + " <b>" + userStatusSelectorModel.predefinedStatus(index).message + "</b> - " + userStatusSelectorModel.predefinedStatusClearAt(index)
+            emoji: userStatusSelectorModel.predefinedStatus(index).icon
+            text: "<b>" + userStatusSelectorModel.predefinedStatus(index).message + "</b> - " + userStatusSelectorModel.predefinedStatusClearAt(index)
             onClicked: userStatusSelectorModel.setPredefinedStatus(index)
         }
     }

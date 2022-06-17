@@ -28,13 +28,24 @@ AbstractButton {
     leftPadding: Style.standardSpacing / 2
     rightPadding: Style.standardSpacing / 2
 
+    property real internalSpacing: Style.standardSpacing
+    property string emoji: ""
+
     background: Rectangle {
         color: root.hovered || root.checked ? Style.lightHover : "transparent"
         radius: Style.slightlyRoundedButtonRadius
     }
 
-    contentItem: Label {
-        text: root.text
-        color: Style.ncTextColor
+    contentItem: Row {
+        spacing: internalSpacing
+
+        Label {
+            text: emoji
+        }
+
+        Label {
+            text: root.text
+            color: Style.ncTextColor
+        }
     }
 }
