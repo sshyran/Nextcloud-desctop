@@ -44,7 +44,7 @@ ColumnLayout {
 
         Button {
             Layout.fillWidth: true
-            checked: NC.UserStatus.Online == userStatusSelectorModel.onlineStatus
+            checked: NC.UserStatus.Online === userStatusSelectorModel.onlineStatus
             checkable: true
             icon.source: userStatusSelectorModel.onlineIcon
             icon.color: "transparent"
@@ -54,7 +54,7 @@ ColumnLayout {
         }
         Button {
             Layout.fillWidth: true
-            checked: NC.UserStatus.Away == userStatusSelectorModel.onlineStatus
+            checked: NC.UserStatus.Away === userStatusSelectorModel.onlineStatus
             checkable: true
             icon.source: userStatusSelectorModel.awayIcon
             icon.color: "transparent"
@@ -65,7 +65,7 @@ ColumnLayout {
         }
         Button {
             Layout.fillWidth: true
-            checked: NC.UserStatus.DoNotDisturb == userStatusSelectorModel.onlineStatus
+            checked: NC.UserStatus.DoNotDisturb === userStatusSelectorModel.onlineStatus
             checkable: true
             icon.source: userStatusSelectorModel.dndIcon
             icon.color: "transparent"
@@ -75,7 +75,7 @@ ColumnLayout {
         }
         Button {
             Layout.fillWidth: true
-            checked: NC.UserStatus.Invisible == userStatusSelectorModel.onlineStatus
+            checked: NC.UserStatus.Invisible === userStatusSelectorModel.onlineStatus
             checkable: true
             icon.source: userStatusSelectorModel.invisibleIcon
             icon.color: "transparent"
@@ -138,15 +138,15 @@ ColumnLayout {
     }
 
     Repeater {
-        model: userStatusSelectorModel.predefinedStatusesCount
+        model: userStatusSelectorModel.predefinedStatuses
 
         Button {
             id: control
             Layout.fillWidth: true
             flat: !hovered
             hoverEnabled: true
-            text: userStatusSelectorModel.predefinedStatus(index).icon + " <b>" + userStatusSelectorModel.predefinedStatus(index).message + "</b> - " + userStatusSelectorModel.predefinedStatusClearAt(index)
-            onClicked: userStatusSelectorModel.setPredefinedStatus(index)
+            text: modelData.icon + " <b>" + modelData.message + "</b> - " + userStatusSelectorModel.clearAtReadable(modelData)
+            onClicked: userStatusSelectorModel.setPredefinedStatus(modelData)
         }
     }
 
@@ -163,9 +163,11 @@ ColumnLayout {
 
        ComboBox {
            Layout.fillWidth: true
-           model: userStatusSelectorModel.clearAtValues
-           displayText: userStatusSelectorModel.clearAt
-           onActivated: userStatusSelectorModel.setClearAt(index)
+           model: userStatusSelectorModel.clearStageTypes
+           textRole: "display"
+           valueRole: "clearStageType"
+           displayText: userStatusSelectorModel.clearAtDisplayString
+           onActivated: userStatusSelectorModel.setClearAt(currentValue)
        }
    }
 
